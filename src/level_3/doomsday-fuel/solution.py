@@ -19,13 +19,20 @@ def solution(m):
         m: Square matrix of positive integer transition counts. It's required
            that no matter which state the ore is in, there is a path from that
            state to a terminal state. There also must be at least one terminal
-           state and the first row cannot be all zeros.
+           state.
 
     Returns:
         A list of ints for each terminal state giving the exact probabilities
         of each terminal state, represented as the numerator for each state,
         then the denominator for all of them at the end and in simplest form.
     """
+
+    # Early exit for 1-by-1 matrix
+    if len(m) == 1:
+        if m[0][0] != 0:
+            raise ValueError("Cannot have a single state that isn't terminal.")
+        else:
+            return [1, 1]
 
     # Note: for more detail regarding the theoretical basis of the following,
     # see https://en.wikipedia.org/wiki/Absorbing_Markov_chain. Also note that
