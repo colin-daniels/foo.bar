@@ -23,8 +23,6 @@ class TestSolution(unittest.TestCase):
             "65451739737157454059823250037671948325191776995"
             "310741236436"
         )
-        # self.assertEqual("7071067832576154", solution(str(100000000)))
-        # self.assertEqual("28284271288883260", solution(str(200000000)))
 
 
 if __name__ == '__main__':
