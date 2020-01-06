@@ -20,5 +20,5 @@ jobs:
         # just compile and run each solution file
         for sol in **/Solution.java; do
             dir=$(dirname -- "$sol")
-            (cd "$dir" && javac Solution.java && java -ea Solution.class)
+            (cd "$dir" && javac Solution.java && java -ea Solution)
         done
