@@ -1,0 +1,24 @@
+name: Java Solutions
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Test
+      run: |
+        set -e
+        shopt -s globstar
+        # just compile and run each solution file
+        for sol in **/Solution.java; do
+            dir=$(dirname -- "$sol")
+            (cd "$dir" && javac Solution.java && java -ea Solution.class)
+        done
