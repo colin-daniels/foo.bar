@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Solution {
     /**
      * @param h Height of the perfect tree of converters, must be greater than 0 and less than 31.
